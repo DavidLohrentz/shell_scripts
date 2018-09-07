@@ -1,0 +1,31 @@
+#!/bin/bash
+echo "What do you want for the upper limit?"
+read UPPER_LIMIT
+PLAYER_GUESS=0
+COMPUTER=$((1 + RANDOM % $UPPER_LIMIT))
+
+echo "Computer's random number is $COMPUTER"
+
+while [ $COMPUTER -ne $PLAYER_GUESS ]
+
+do
+
+#    echo "Enter a number between 1 and $UPPER_LIMIT"
+    read -p "Enter a number between 1 and $UPPER_LIMIT > " PLAYER_GUESS
+    echo "You guessed $PLAYER_GUESS and the computer's number is $COMPUTER."
+
+    if [ $PLAYER_GUESS == $COMPUTER ]; then
+        echo "You got it"
+
+    elif [ $PLAYER_GUESS -gt $COMPUTER ]; then
+        echo "Too high"
+
+    elif [ $PLAYER_GUESS -lt $COMPUTER ]; then
+        echo "Too low"
+
+    else
+        echo "Enter a number"
+
+    fi
+
+done
