@@ -1,0 +1,11 @@
+#!/bin/bash
+
+#Convert Fahrenheit to C
+
+echo "Temperature in F:"
+
+read FTEMP
+
+CTEMP=$((0.555 \* ($FTEMP - 32)))
+
+echo "The temp in Celsius is $CTEMP"
