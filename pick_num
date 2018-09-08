@@ -17,7 +17,7 @@ do
     let COUNTER++
 
     if [ $PLAYER_GUESS == $COMPUTER ]; then
-        echo "You got it"
+        echo "That's right!"
 
     elif [ $PLAYER_GUESS -gt $COMPUTER ]; then
         echo "Too high"
@@ -31,4 +31,11 @@ do
     fi
 
 done
-echo "Your guess count was $COUNTER."
+
+if [ $COUNTER == 1 ]; then
+  echo "You got it with only one guess!"
+
+else
+  echo "You got it right after $COUNTER guesses."
+
+fi
