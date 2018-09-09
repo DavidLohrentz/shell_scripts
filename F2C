@@ -16,6 +16,6 @@ elif [ $TARGET == "c" -o $TARGET == "C" ]; then
     echo "The approximate temp in Celsius is $CTEMP"
 
 else
-    echo "Make a valid selection"
+    echo "Make a valid selection, dipshit."
 
 fi
