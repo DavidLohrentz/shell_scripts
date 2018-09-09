@@ -2,10 +2,20 @@
 
 #Convert Fahrenheit to C
 
-echo "Temperature in F:"
+read -p "Converting into Fahrenheit or Celsius? f/c: " TARGET
 
-read FTEMP
+if [ $TARGET == "f" -o $TARGET == "F" ]; then
+    read -p "What is the temperature in Celsius: " CTEMP
+    let FTEMP=($CTEMP*9/5)+32
+    echo "The temp in Celsius is $FTEMP"
 
-CTEMP=$((0.555 \* ($FTEMP - 32)))
 
-echo "The temp in Celsius is $CTEMP"
+elif [ $TARGET == "c" -o $TARGET == "C" ]; then
+    read -p "What is the temperature in Fahrenheit: " FTEMP
+    let CTEMP=($FTEMP-32)*5/9
+    echo "The temp in Celsius is $CTEMP"
+
+else
+    echo "Make a valid selection"
+
+fi
