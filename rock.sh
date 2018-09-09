@@ -9,7 +9,7 @@ sleep 0.4
 
 CRCOUNT=0
 CPCOUNT=0
-CSCOUNT=
+CSCOUNT=0
 
 read -p "Match Length: " MATCH_LENGTH
 HUMAN_WINS=0
