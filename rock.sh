@@ -7,6 +7,10 @@ sleep 0.4
 echo "scissors"
 sleep 0.4
 
+CRCOUNT=0
+CPCOUNT=0
+CSCOUNT=
+
 read -p "Match Length: " MATCH_LENGTH
 HUMAN_WINS=0
 COMPUTER_WINS=0
@@ -37,13 +41,15 @@ do
 
     if [ $COMPUTER == 1 ]; then
         COMPUTER_WORD="rock"
+        let CRCOUNT++
 
     elif [ $COMPUTER == 2 ]; then
         COMPUTER_WORD="paper"
+        let CPCOUNT++
 
     else
         COMPUTER_WORD="scissors"
-
+        let CSCOUNT++
     fi
 
 
@@ -71,6 +77,11 @@ do
     fi
 
 done
+
+echo "Computer choices
+Rock: $CRCOUNT
+Paper: $CPCOUNT
+Scissors: $CSCOUNT"
 
 if [ $COMPUTER_WINS -eq $MATCH_LENGTH ]; then
     echo "Computer wins the match!"
